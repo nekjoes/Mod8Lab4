@@ -1,0 +1,19 @@
+version: '3'
+services:
+  api-server:
+    image: proyenode:v1
+    stdin_open: true
+    ports:
+    - "5000:5000"
+    networks:
+      - jeMod8
+  react-app: 
+    image: proyereact:v3
+    ports:
+     - "3000:3000"
+    networks:
+      - jeMod8
+  
+networks:
+  jeMod8:
+    driver: bridge
